@@ -60,6 +60,9 @@ In the context of a chiller system, columns based on typical parameters used in 
 
 28. **Precent_CT**: The percentage load or capacity of the cooling tower (CT). This shows how much of the cooling tower's capacity is being utilized.
 
+29. **Temp**: temperature of the chiller
+
+
 ### Summary of Key Groups:
 
 - **Power (kW)**: Tracks the energy usage of various system components like chillers, pumps, condensers, and cooling towers.
