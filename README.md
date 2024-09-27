@@ -1,75 +1,115 @@
 # r-menCodeCortex
 
-chiller load prediction
+To update the README with the missing values, I'll expand on the values that were not fully covered in the previous explanation, adding more detail where necessary. Here's the revised README:
 
-In the context of a chiller system, columns based on typical parameters used in monitoring and managing chillers:
+---
 
-1. **Time**: The timestamp indicating when the data was recorded. This is often used to track the performance of the chiller over time.
+# Chiller Load Prediction Data
 
-2. **RT**: This could refer to the total refrigeration capacity or tonnage in real-time (RT stands for Refrigeration Tons). It indicates the cooling capacity being provided by the chiller at that moment.
+This dataset contains various parameters associated with monitoring and managing a chiller system, which is essential for optimizing cooling performance, energy efficiency, and overall system reliability.
 
-3. **kW_Tot**: Total electrical power consumption (in kilowatts) of the chiller system. This would represent the overall power drawn by all components of the system.
+## Data Fields Description:
 
-4. **kW_RT**: Real-time power consumption (in kilowatts) of the chiller. It reflects how much electrical energy the chiller is consuming at the given time.
+1. **Time**:  
+   The timestamp of when the data was recorded, which helps in tracking the performance of the chiller over time.
 
-5. **CH Load**: The cooling load on the chiller system. It indicates how much cooling is required by the system to meet demand, usually expressed in tons or as a percentage of capacity.
+2. **RT (Refrigeration Tons)**:  
+   Represents the total cooling capacity (in tons) that the chiller is providing at the time of recording.
 
-6. **CH1, CH2, CH3, CH4**: These could represent individual chillers or components of the chiller system. They may be binary (on/off) or represent operational statuses such as load percentages.
+3. **kW_Tot**:  
+   Total electrical power consumption (in kilowatts) for the entire chiller system. It represents the sum of energy consumption by all components of the system.
 
-7. **kW_CHH**: Kilowatt consumption of the chiller heat pump (CHH). This could represent the power used by a heat pump in the chiller circuit.
+4. **kW_RT**:  
+   Real-time power consumption (in kilowatts) of the chiller at the exact moment of data recording.
 
-8. **kW_CHP**: Kilowatt consumption of the primary chiller pump (CHP). This would track the energy usage of the primary pump responsible for circulating chilled water.
+5. **CH Load**:  
+   The current cooling load placed on the chiller system, often expressed in terms of tons or a percentage of the chiller’s maximum capacity.
 
-9. **kW_CHS**: Kilowatt consumption of the secondary chiller system (CHS). This could be the power drawn by secondary pumps or chillers working in the system.
+6. **kW_CHH (Chiller Heat Pump)**:  
+   Kilowatt consumption by the chiller heat pump, a component responsible for managing heat exchange in the system.
 
-10. **kW_CDS**: Kilowatt consumption of the condenser system (CDS). This tracks the energy usage of the condenser, which rejects heat from the chiller to the environment.
+7. **kW_CHP (Primary Chiller Pump)**:  
+   Power usage (in kilowatts) of the primary chiller pump, which circulates chilled water throughout the system.
 
-11. **kW_CT**: Kilowatt consumption of the cooling tower (CT). This reflects the power used by the cooling tower fans and water circulation systems.
+8. **kW_CHS (Secondary Chiller System)**:  
+   Power consumption by the secondary chiller system, such as additional pumps or secondary chillers that may assist in providing cooling.
 
-12. **GPM**: Gallons per minute. This typically represents the flow rate of chilled water or condenser water in the system. It shows how much water is circulating through the system.
+9. **kW_CDS (Condenser System)**:  
+   Energy consumption by the condenser system, which expels heat from the chiller into the atmosphere or another heat sink.
 
-13. **DeltaCHW**: The temperature difference across the chilled water loop. This is the difference between the supply and return chilled water temperatures and is critical for evaluating system efficiency.
+10. **kW_CT (Cooling Tower)**:  
+    Kilowatt consumption by the cooling tower, which aids in dissipating heat from the system.
 
-14. **CHWS**: Chilled water supply temperature. The temperature of the water leaving the chiller to cool the building or process.
+11. **GPM (Gallons Per Minute)**:  
+    The flow rate of water, typically either chilled water or condenser water, circulated within the system.
 
-15. **CHWR**: Chilled water return temperature. The temperature of the water returning to the chiller after being used to cool the space or process.
+12. **DeltaCHW (Chilled Water Differential Temperature)**:  
+    The temperature difference between the chilled water supply (CHWS) and chilled water return (CHWR). This helps in determining the efficiency of the cooling process.
 
-16. **DeltaCDW**: The temperature difference across the condenser water loop. This is the difference between the supply and return temperatures of the condenser water, indicating heat rejection efficiency.
+13. **CHWS (Chilled Water Supply Temperature)**:  
+    The temperature of the chilled water being supplied to the system or process that needs cooling.
 
-17. **CDHI**: Condenser high inlet temperature. This represents the temperature of the water entering the condenser on the high-pressure side.
+14. **CHWR (Chilled Water Return Temperature)**:  
+    The temperature of the water returning to the chiller after absorbing heat from the system or space being cooled.
 
-18. **CDLO**: Condenser low outlet temperature. This represents the temperature of the water leaving the condenser on the low-pressure side.
+15. **DeltaCDW (Condenser Water Differential Temperature)**:  
+    The temperature difference between the condenser water inlet and outlet. This helps in evaluating the performance of the condenser in rejecting heat.
 
-19. **WBT**: Wet-bulb temperature. The ambient wet-bulb temperature, often used to evaluate cooling tower performance and efficiency.
+16. **CDHI (Condenser High Inlet Temperature)**:  
+    The temperature of water entering the condenser at the high-pressure side, which is important for assessing condenser load and efficiency.
 
-20. **DeltaCT**: The temperature difference across the cooling tower. This measures the efficiency of the cooling tower in rejecting heat.
+17. **CDLO (Condenser Low Outlet Temperature)**:  
+    The temperature of water leaving the condenser on the low-pressure side after it has absorbed heat from the refrigerant.
 
-21. **Hz_CHP**: Frequency (in Hertz) of the primary chiller pump (CHP). This could indicate the speed of the pump if it's controlled by a variable frequency drive (VFD).
+18. **WBT (Wet-Bulb Temperature)**:  
+    The ambient wet-bulb temperature, which plays a critical role in assessing the efficiency of the cooling tower and overall system performance in rejecting heat.
 
-22. **Hz_CHS**: Frequency (in Hertz) of the secondary chiller system (CHS). Similar to Hz_CHP, this could reflect the speed of secondary pumps or chillers controlled by VFDs.
+19. **DeltaCT (Cooling Tower Temperature Differential)**:  
+    The temperature difference between the water entering and exiting the cooling tower, used to evaluate the cooling tower's efficiency.
 
-23. **Hz_CDS**: Frequency (in Hertz) of the condenser system (CDS), likely showing the speed of condenser pumps or fans driven by a VFD.
+20. **Hz_CHP (Primary Chiller Pump Frequency)**:  
+    The frequency (in Hertz) of the primary chiller pump, indicating the speed at which the pump is operating, particularly if controlled by a variable frequency drive (VFD).
 
-24. **Hz_CT**: Frequency (in Hertz) of the cooling tower (CT), indicating the speed of the cooling tower fan motors controlled by a VFD.
+21. **Hz_CHS (Secondary Chiller System Frequency)**:  
+    Frequency of the secondary chiller system components (like pumps or secondary chillers) driven by VFDs.
 
-25. **Precent_CH**: The percentage load or capacity being used by the chiller system. This shows how much of the chiller's total capacity is currently in use.
+22. **Hz_CDS (Condenser System Frequency)**:  
+    Frequency (in Hertz) of the condenser system, reflecting the speed of the condenser pumps or fans controlled by a VFD.
 
-26. **Precent_CHP**: The percentage load or capacity being used by the primary chiller pump (CHP). This shows how hard the primary pump is working relative to its maximum capacity.
+23. **Hz_CT (Cooling Tower Frequency)**:  
+    Frequency (in Hertz) of the cooling tower fan motors, which could be controlled by VFDs.
 
-27. **Precent_CDS**: The percentage load or capacity of the condenser system (CDS). This shows the condenser system's current load relative to its capacity.
+24. **Precent_CH (Chiller Load Percentage)**:  
+    The percentage of the chiller system’s total capacity that is currently in use. A measure of how much of the system’s potential is being utilized.
 
-28. **Precent_CT**: The percentage load or capacity of the cooling tower (CT). This shows how much of the cooling tower's capacity is being utilized.
+25. **Precent_CHP (Primary Chiller Pump Load Percentage)**:  
+    The percentage load on the primary chiller pump, showing how much of its maximum capacity is being utilized.
 
-29. **Temp**: temperature of the chiller
+26. **Precent_CDS (Condenser System Load Percentage)**:  
+    The percentage of the condenser system’s capacity that is currently in use.
 
+27. **Precent_CT (Cooling Tower Load Percentage)**:  
+    The percentage load on the cooling tower, indicating how much of its total capacity is being utilized to reject heat from the system.
 
-### Summary of Key Groups:
+28. **RH [%] (Relative Humidity)**:  
+    The percentage of relative humidity in the ambient air. This can affect cooling tower performance and overall system efficiency.
 
-- **Power (kW)**: Tracks the energy usage of various system components like chillers, pumps, condensers, and cooling towers.
-- **Temperature (CHWS, CHWR, CDHI, CDLO)**: Monitors water temperatures in the chilled water and condenser water loops.
-- **Flow (GPM)**: Measures water flow rate.
-- **Delta Values (DeltaCHW, DeltaCDW, DeltaCT)**: Shows temperature differences across key components, critical for evaluating efficiency.
-- **Frequency (Hz)**: Tracks the speed of VFD-driven components like pumps and fans.
-- **Load Percentage (Precent\_\*)**: Reflects the system’s capacity usage in real-time.
+29. **Temperature [°C]**:  
+    The ambient air temperature around the chiller or cooling tower. This influences the heat rejection process and overall system performance.
 
-These parameters help monitor and optimize chiller system performance, energy efficiency, and overall capacity utilization.
+## Key Groupings:
+
+- **Power (kW)**:  
+  Metrics related to energy consumption by various components (chiller, pumps, condenser, cooling tower).
+- **Temperature (CHWS, CHWR, CDHI, CDLO)**:  
+  Measures critical temperature points across the chiller and condenser loops.
+- **Flow (GPM)**:  
+  Reflects the flow rate of water through the system, critical for cooling performance.
+- **Delta Values (DeltaCHW, DeltaCDW, DeltaCT)**:  
+  Indicates temperature differences across system components, used to evaluate efficiency.
+- **Frequency (Hz)**:  
+  Tracks the speed of pumps and fans driven by variable frequency drives (VFDs).
+- **Load Percentage (Precent\_\*)**:  
+  Reflects the percentage of each system’s capacity that is currently being used.
+
+---
